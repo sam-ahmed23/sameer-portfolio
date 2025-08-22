@@ -14,7 +14,7 @@ It showcases my work, services, and contact details with smooth animations and m
 
 ---
 ## 📸 Preview
-![Portfolio Preview](./images/work-1.png)
+![Portfolio Preview](./images/sam1.png)
 
 ---
 
