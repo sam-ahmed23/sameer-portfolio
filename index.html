@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sameer Ahmed - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Ovo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Tailwind CSS CDN -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+/* Start hidden */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+}
+
+/* When visible */
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+html { scroll-behavior: smooth; }
+    .fade-in { animation: fadeIn 1s ease-in; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:translateY(0);} }
+    
+#px-60,px-61,px-62 {
+  transition: all 0.4s ease-in-out;
+}
+
+#px-60:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent), 0 0 45px var(--accent);
+  background-color: var(--accent);
+  color: #fff;
+}
+#px-61:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent), 0 0 45px var(--accent);
+  background-color: var(--accent);
+  
+}
+#px-62:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent), 0 0 45px var(--accent);
+  background-color: var(--accent);
+  
+}
+/* Glow Animation for Name */
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 5px #ff77ff, 0 0 10px #ff77ff, 0 0 20px #ff77ff; }
+  50% { text-shadow: 0 0 10px #ff33ff, 0 0 20px #ff33ff, 0 0 30px #ff33ff; }
+}
+.animate-glow {
+  animation: glow 2s infinite alternate;
+}
+
+/* Subtle Background Pulse */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.25; }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 6s infinite alternate;
+}
+
+/* Fade In Up for Text */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease forwards;
+}
+.animate-fadeInUp.delay-200 { animation-delay: 0.2s; }
+.animate-fadeInUp.delay-400 { animation-delay: 0.4s; }
+
+
+  </style>
+</head>
+<body class="font-Ovo bg-white text-gray-900 transition-colors duration-500 fade-in" id="top">
+
+  <!-- Navigation -->
+  <header>
+    <nav class="fixed top-0 w-full flex items-center justify-between px-6 py-4 bg-white shadow z-50 transition-colors duration-500">
+      <img src="./images/sam5.jpg" alt="Logo" class="w-24">
+      <ul class="hidden md:flex gap-6 font-medium">
+        <li><a href="#top" class="hover:underline">Home</a></li>
+        <li><a href="#about" class="hover:underline">About</a></li>
+        <li><a href="#services" class="hover:underline">Services</a></li>
+        <li><a href="#work" class="hover:underline">Work</a></li>
+        <li><a href="#contact" class="hover:underline">Contact</a></li>
+      </ul>
+      <button id="theme-toggle" class="ml-4 px-3 py-1 border rounded text-sm hover:bg-gray-100 transition">🎨 Theme</button>
+    </nav>
+  </header>
+<main>
+<!-- Hero Section -->
+<section id="home" class="h-screen flex flex-col items-center justify-center text-center px-4 relative overflow-hidden">
+
+  <!-- subtle bg stays (no extra animation needed) -->
+  <div class="absolute inset-0 opacity-10 pointer-events-none"></div>
+
+  <!-- Profile Image: upgraded animation + aura -->
+  <div class="relative z-10 mb-6">
+    <div class="relative w-32 h-32 md:w-40 md:h-40 group">
+      <!-- soft animated aura behind the photo -->
+      <div class="absolute -inset-2 rounded-full bg-gradient-to-tr from-fuchsia-500/40 via-purple-500/30 to-indigo-500/40 blur-xl animate-aura"></div>
+
+      <!-- the photo -->
+      <img
+        src="./images/linkedin3.jpg"
+        alt="Sameer Ahmed"
+        class="absolute inset-0 w-full h-full object-cover rounded-full border-4 border-gray-200 dark:border-gray-700 shadow-2xl animate-zoom-bounce group-hover:scale-[1.08] transition-transform duration-500 will-change-transform"
+      />
+
+      <!-- crisp outer ring -->
+      <div class="pointer-events-none absolute -inset-[6px] rounded-full ring-2 ring-purple-400/50 group-hover:ring-purple-300/80 transition"></div>
+    </div>
+  </div>
+
+  <!-- Keep the rest exactly the same -->
+  <h1 class="text-3xl md:text-5xl font-bold z-10 relative">
+    Hi! I'm <span class="theme-accent animate-glow">Sameer Ahmed</span>
+  </h1>
+
+  <p class="max-w-xl mt-4 text-gray-700 dark:text-gray-300 z-10 text-lg md:text-xl animate-fadeInUp">
+    Full Stack Developer from India creating modern, high-quality web applications that deliver real impact.
+  </p>
+
+  <div class="flex gap-4 mt-6 z-10 animate-fadeInUp delay-200">
+    <a href="#contact" class="px-6 py-2 theme-btn text-white rounded-full transition hover:scale-105 duration-300">Contact Me</a>
+    <a href="./images/samResume.pdf" download class="px-6 py-2 border rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">My Resume</a>
+  </div>
+
+  <div class="flex gap-6 mt-6 text-2xl z-10 animate-fadeInUp delay-400">
+    <a href="https://www.instagram.com/sam.eer_3/?hl=en" target="_blank" class="text-pink-500 hover:scale-110 transition duration-300"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com/sam-ahmed23" target="_blank" class="text-gray-800 dark:text-gray-200 hover:scale-110 transition duration-300"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/sameerahmed23/" target="_blank" class="text-blue-700 hover:scale-110 transition duration-300"><i class="fab fa-linkedin"></i></a>
+    <a href="https://x.com/Sameer75703" target="_blank" class="text-blue-400 hover:scale-110 transition duration-300"><i class="fab fa-twitter"></i></a>
+  </div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="py-16 px-6 w-full px-[12%] scroll-mt-18">
+  <h2 class="text-4xl text-center mb-6 font-bold">About Me</h2>
+
+  <!-- Main Summary -->
+  <p class="max-w-2xl mx-auto text-center text-gray-700 dark:text-gray-300 mb-12">
+    Iam passionate about working with multiple organizations delivering high-quality projects. 
+    My expertise spans frontend and backend development, ensuring seamless user experiences 
+    and robust functionality.
+  </p>
+
+  <div class="flex w-full flex-col lg:flex-row items-center gap-20">
+
+    <!-- Profile Image -->
+    <div class="max-w-max mx-auto relative">
+      <div class="blur-bg absolute inset-0 rounded-3xl"></div>
+      <img src="./images/IMG_2344.JPG" alt="Sameer Ahmed"
+           class="relative w-64 sm:w-80 rounded-3xl max-w-none shadow-lg">
+
+      <!-- Circular text (static, no rotation) -->
+      <div class="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full 
+                  translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] 
+                  flex items-center justify-center">
+        <img src="./images/circular-text.png" alt="Circular Text" class="w-full">
+      </div>
+    </div>
+
+    <!-- About Text and Skills -->
+    <div class="flex-1">
+      <!-- Skills Grid -->
+      <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+        <li class="border border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] dark:hover:bg-gray-800 
+                   hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+          <img src="./images/code-icon.png" alt="Languages" class="w-7 mt-3">
+          <h3 class="my-4 font-semibold text-gray-700 dark:text-gray-200">Languages</h3>
+          <p class="text-gray-600 dark:text-gray-300">HTML, CSS, JavaScript, Python, MySQL</p>
+        </li>
+
+        <li class="border border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] dark:hover:bg-gray-800 
+                   hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+          <img src="./images/edu-icon.png" alt="Education" class="w-7 mt-3">
+          <h3 class="my-4 font-semibold text-gray-700 dark:text-gray-200">Education</h3>
+          <p class="text-gray-600 dark:text-gray-300">Bachelor of Computer Applications</p>
+        </li>
+
+        <li class="border border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] dark:hover:bg-gray-800 
+                   hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+          <img src="./images/project-icon.png" alt="Projects" class="w-7 mt-3">
+          <h3 class="my-4 font-semibold text-gray-700 dark:text-gray-200">Projects</h3>
+          <p class="text-gray-600 dark:text-gray-300">Built over 5 real-world projects.</p>
+        </li>
+      </ul>
+
+      <!-- Tools -->
+      <h4 class="my-6 text-gray-700 dark:text-gray-300 font-semibold">Tools I Use</h4>
+      <ul class="flex flex-wrap items-center gap-3 sm:gap-5">
+        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 
+                   rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+          <img src="./images/vscode.png" alt="VS Code" class="w-5 sm:w-7">
+        </li>
+        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 
+                   rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+          <img src="./images/firebase.png" alt="Firebase" class="w-5 sm:w-7">
+        </li>
+        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 
+                   rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+          <img src="./images/mongodb.png" alt="MongoDB" class="w-5 sm:w-7">
+        </li>
+        <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 
+                   rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+          <img src="./images/git.png" alt="Git" class="w-5 sm:w-7">
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Services -->
+ 
+
+<section id="services" class="w-full px-[12%] py-10 scroll-mt-20 fade-in">
+  <!-- Heading -->
+  <h4 class="text-center mb-2 text-lg">What I Offer</h4>
+  <h2 class="text-center text-5xl font-bold">My Services</h2>
+  <p class="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 leading-relaxed">
+    As a Full Stack Developer, I offer end-to-end solutions including design, development, and user experience.  
+    My services focus on building clean, responsive, and user-friendly applications.
+  </p>
+
+  <!-- Services Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-10">
+    
+    <!-- Service 1 -->
+    <div class="border border-gray-400 rounded-lg p-6 hover:shadow-[4px_4px_0_#000] cursor-pointer hover:-translate-y-1 duration-300 bg-white">
+      <img src="./images/web-icon.png" alt="Web Design Icon" class="w-10">
+      <h3 class="text-lg my-4 font-semibold text-gray-700">Web Design</h3>
+      <p class="text-sm text-gray-600 leading-5">
+        Building modern and scalable web solutions that are responsive and visually appealing.
+      </p>
+      <a href="#" class="flex items-center gap-2 text-sm mt-5 text-blue-600 hover:underline">
+        Read more 
+        <img src="./images/right-arrow-dark.png" alt="arrow" class="w-4">
+      </a>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="border border-gray-400 rounded-lg p-6 hover:shadow-[4px_4px_0_#000] cursor-pointer hover:-translate-y-1 duration-300 bg-white">
+      <img src="./images/mobile-icon.png" alt="Frontend Dev Icon" class="w-10">
+      <h3 class="text-lg my-4 font-semibold text-gray-700">Frontend Dev</h3>
+      <p class="text-sm text-gray-600 leading-5">
+        Creating interactive, responsive, and fast user interfaces using React and Tailwind CSS.
+      </p>
+      <a href="#" class="flex items-center gap-2 text-sm mt-5 text-blue-600 hover:underline">
+        Read more 
+        <img src="./images/right-arrow-dark.png" alt="arrow" class="w-4">
+      </a>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="border border-gray-400 rounded-lg p-6 hover:shadow-[4px_4px_0_#000] cursor-pointer hover:-translate-y-1 duration-300 bg-white">
+      <img src="./images/ui-icon.png" alt="UI/UX Icon" class="w-10">
+      <h3 class="text-lg my-4 font-semibold text-gray-700">UI / UX</h3>
+      <p class="text-sm text-gray-600 leading-5">
+        Designing clean, intuitive, and user-friendly interfaces with a focus on usability and flow.
+      </p>
+      <a href="#" class="flex items-center gap-2 text-sm mt-5 text-blue-600 hover:underline">
+        Read more 
+        <img src="./images/right-arrow-dark.png" alt="arrow" class="w-4">
+      </a>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="border border-gray-400 rounded-lg p-6 hover:shadow-[4px_4px_0_#000] cursor-pointer hover:-translate-y-1 duration-300 bg-white">
+      <img src="./images/graphics-icon.png" alt="Graphics Icon" class="w-10">
+      <h3 class="text-lg my-4 font-semibold text-gray-700">Graphics Design</h3>
+      <p class="text-sm text-gray-600 leading-5">
+        Creating custom logos, branding materials, and illustrations to bring your ideas to life.
+      </p>
+      <a href="#" class="flex items-center gap-2 text-sm mt-5 text-blue-600 hover:underline">
+        Read more 
+        <img src="./images/right-arrow-dark.png" alt="arrow" class="w-4">
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+    <!--------------- My Work Section --------------->
+<div id="work" class="w-full px-[12%] py-10 scroll-mt-20 fade-in">
+  <h4 class="text-center mb-2 text-lg">My Portfolio</h4>
+  <h2 class="text-center text-5xl">My Latest Work</h2>
+  <p class="text-center max-w-2xl mx-auto mt-5 mb-12">
+    Welcome to my web development portfolio. Explore a collection of projects showcasing my expertise in full-stack development.  
+    From responsive frontend design to efficient backend solutions, I create modern, user-friendly, and scalable applications.
+  </p>
+  <div class="grid grid-cols-4 my-10 gap-5">
+    <!-- Work 1 -->
+    <div class="aspect-square bg-[url('./images/work-1.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
+      <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+        <div>
+          <h2 class="font-semibold">Web Design Project</h2>
+          <p class="text-sm text-gray-700">Responsive UI layouts</p>
+        </div>
+        <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+          <img src="./images/send-icon.png" alt="" class="w-5">
+        </div>
+      </div>
+    </div>
+
+    <!-- Work 2 -->
+    <div class="aspect-square bg-[url('./images/work-4.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
+      <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+        <div>
+          <h2 class="font-semibold">Full-Stack Project</h2>
+          <p class="text-sm text-gray-700">End-to-end solution</p>
+        </div>
+        <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+          <img src="./images/send-icon.png" alt="" class="w-5">
+        </div>
+      </div>
+    </div>
+
+    <!-- Work 3 -->
+    <div class="aspect-square bg-[url('./images/work-2.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
+      <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+        <div>
+          <h2 class="font-semibold">Frontend Project</h2>
+          <p class="text-sm text-gray-700">Interactive components</p>
+        </div>
+        <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+          <img src="./images/send-icon.png" alt="" class="w-5">
+        </div>
+      </div>
+    </div>
+
+    <!-- Work 4 -->
+    <div class="aspect-square bg-[url('./images/work-3.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
+      <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+        <div>
+          <h2 class="font-semibold">Backend Project</h2>
+          <p class="text-sm text-gray-700">Secure APIs & DB</p>
+        </div>
+        <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+          <img src="./images/send-icon.png" alt="" class="w-5">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 px-6 fade-in scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center">
+  <h4 class="text-center mb-2 text-lg">Connect with me</h4>
+  <h2 class="text-4xl text-center mb-6 font-bold">Get In Touch</h2>
+  <p class="text-center max-w-2xl mx-auto mt-5 mb-12">
+    I'd love to hear from you! If you have any questions, comments, or feedback, please use the form below.
+  </p>
+
+
+
+  <!----form-->
+  <!-- Form -->
+<form id="contactForm" class="max-w-xl mx-auto space-y-4">
+  <input 
+    type="text" 
+    placeholder="Your Name" 
+    required 
+    class="w-full p-3 border rounded"
+  >
+
+  <input 
+    type="email" 
+    placeholder="Your Email" 
+    required 
+    class="w-full p-3 border rounded focus:outline-none"
+  >
+
+  <textarea 
+    rows="4" 
+    placeholder="Your Message" 
+    required 
+    class="w-full p-3 border rounded focus:outline-none"
+  ></textarea>
+
+  <!-- Centered Submit Button -->
+  <div class="flex justify-center">
+    <button 
+      type="submit" 
+      class="py-3 px-8 flex items-center justify-center gap-2 bg-black/80 text-white rounded hover:bg-black"
+    >
+      Submit Now
+      <img src="./images/right-arrow-white.png" alt="arrow" class="w-4">
+    </button>
+  </div>
+</form>
+
+<!-- JS to show alert -->
+ <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  });
+
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+<section id="about" class="reveal">
+  <h2>About Me</h2>
+  <p>I am a Full Stack Developer...</p>
+</section>
+
+<section id="services" class="reveal">
+  <h2>My Services</h2>
+  ...
+</section>
+
+<script>
+  const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // prevent page reload
+    alert('Thank you! Your message has been submitted successfully.');
+    form.reset(); // optional: clears the form fields
+  });
+</script>
+
+</main>
+
+<!-- Footer -->
+<footer class="py-8 text-center border-t fade-in">
+  <div class="mt-20">
+    <div class="text-center">
+      <img src="./images/sam5.jpg" alt="Logo" class="w-36 mx-auto mb-2">
+      <div class="w-max flex items-center gap-2 mx-auto">
+        <img src="./images/mail_icon.png" alt="Email Icon" class="w-6">
+        sameerhawaldar10@gmail.com
+      </div>
+    </div>
+
+    <div class="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6">
+      <p>@ 2025 Sameer Ahmed. All rights reserved.</p>
+      <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+        <li><a href="https://www.instagram.com/sam.eer_3/?hl=en" class="hover:text-gray-800 transition">Instagram</a></li>
+        <li><a href="https://github.com/sam-ahmed23" class="hover:text-gray-800 transition">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/sameerahmed23/" class="hover:text-gray-800 transition">LinkedIn</a></li>
+        <li><a href="https://x.com/Sameer75703" class="hover:text-gray-800 transition">Twitter</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll To Top -->
+<button id="scrollTop" class="hidden fixed bottom-6 right-6 p-3 theme-btn text-white rounded-full shadow">↑</button>
+
+  <script>
+    // Multi-Theme Toggle
+    const themes = {
+      light: { bg: "#ffffff", text: "#1a202c", accent: "#2563eb" },
+      dark: { bg: "#1a202c", text: "#f7fafc", accent: "#fbbf24" },
+      blue: { bg: "#ebf8ff", text: "#1e3a8a", accent: "#2563eb" },
+      green: { bg: "#f0fff4", text: "#064e3b", accent: "#16a34a" },
+      purple: { bg: "#f5f3ff", text: "#4c1d95", accent: "#7c3aed" }
+    };
+
+    let themeKeys = Object.keys(themes);
+    let currentTheme = 0;
+
+    const toggleBtn = document.getElementById("theme-toggle");
+    const scrollBtn = document.getElementById("scrollTop");
+
+    function applyTheme(theme) {
+      document.body.style.background = themes[theme].bg;
+      document.body.style.color = themes[theme].text;
+      document.querySelectorAll(".theme-accent").forEach(el => el.style.color = themes[theme].accent);
+      document.querySelectorAll(".theme-btn").forEach(el => el.style.background = themes[theme].accent);
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      currentTheme = (currentTheme + 1) % themeKeys.length;
+      applyTheme(themeKeys[currentTheme]);
+    });
+
+    // Scroll To Top
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) scrollBtn.classList.remove("hidden");
+      else scrollBtn.classList.add("hidden");
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Apply default theme
+    applyTheme(themeKeys[currentTheme]);
+  </script>
+</body>
+</html>
