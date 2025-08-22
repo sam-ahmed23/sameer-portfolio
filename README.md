@@ -10,7 +10,7 @@ It showcases my work, services, and contact details with smooth animations and m
 - Smooth scroll navigation and reveal animations
 - Multiple theme color options with dark mode
 - Scroll-to-top button for better user experience
-- Contact form (currently static, easy to connect with Formspree or EmailJS)
+  
 
 ---
 ## 📸 Preview
