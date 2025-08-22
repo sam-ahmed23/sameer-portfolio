@@ -11,6 +11,31 @@
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
 
     <style>
+
+  <!---mobile responsiv --
+    .projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+.project-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr; /* stack 1 card per row */
+  }
+}
+
+
 /* Start hidden */
 .reveal {
   opacity: 0;
@@ -297,6 +322,12 @@ html { scroll-behavior: smooth; }
 
 
     <!--------------- My Work Section --------------->
+
+
+
+
+
+
 <div id="work" class="w-full px-[12%] py-10 scroll-mt-20 fade-in">
   <h4 class="text-center mb-2 text-lg">My Portfolio</h4>
   <h2 class="text-center text-5xl">My Latest Work</h2>
@@ -304,7 +335,10 @@ html { scroll-behavior: smooth; }
     Welcome to my web development portfolio. Explore a collection of projects showcasing my expertise in full-stack development.  
     From responsive frontend design to efficient backend solutions, I create modern, user-friendly, and scalable applications.
   </p>
-  <div class="grid grid-cols-4 my-10 gap-5">
+
+  <!-- ✅ FIXED GRID -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    
     <!-- Work 1 -->
     <div class="aspect-square bg-[url('./images/work-1.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
       <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
@@ -356,7 +390,9 @@ html { scroll-behavior: smooth; }
         </div>
       </div>
     </div>
-  </div>
+
+  </div> <!-- end grid -->
+</div>
 
 
 
